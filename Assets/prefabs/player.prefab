@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 9215167599098534357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 2.203, z: -5.92}
-  m_LocalScale: {x: 1.0819982, y: 1.0265367, z: 0.64902234}
+  m_LocalPosition: {x: 0.398, y: 2.8927, z: -5.92}
+  m_LocalScale: {x: 2.5692556, y: 2.399214, z: 1.8366512}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,8 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   player: {fileID: 0}
-  speed: 0
-  jump: 0
+  speed: 6
+  jump: 8
   spriteDown: {fileID: 0}
   spriteUp: {fileID: 0}
   spriteLeft: {fileID: 0}
@@ -169,8 +169,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.011782724, y: 0.0038071873}
-  m_Size: {x: 0.66061246, y: 1.3687695}
+  m_Offset: {x: -0.009426233, y: 0.6769338}
+  m_Size: {x: 0.71245635, y: 1.3538677}
   m_Direction: 0
 --- !u!95 &308982528045341928
 Animator:

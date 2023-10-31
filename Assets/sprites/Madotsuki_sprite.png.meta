@@ -161,12 +161,12 @@ TextureImporter:
       name: Madotsuki_sprite_0
       rect:
         serializedVersion: 2
-        x: 59
+        x: 60
         y: 34
         width: 82
         height: 137
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,14 +181,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b39eac38d72054c4184fb5808a9860ed
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Madotsuki_sprite_0: -1237630994354052924
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

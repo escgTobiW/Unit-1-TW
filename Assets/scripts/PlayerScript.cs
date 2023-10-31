@@ -67,7 +67,7 @@ public class PlayerScript : MonoBehaviour
             //-----Controls--------
 
             //---JUMP---         (was UP)
-            if (Input.GetKeyDown("space") && (Helping.GroundCheck(0, -0.8f)) == true)
+            if (Input.GetKeyDown("space") && (Helping.GroundCheck(0, 0)) == true)
             {
                 anim.SetBool("jump", true);
                 rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
@@ -75,7 +75,7 @@ public class PlayerScript : MonoBehaviour
                 
             }
 
-            if (Helping.GroundCheck(0, -0.8f) == false)
+            if (Helping.GroundCheck(0, 0) == false)
             {
                 anim.SetBool("jump", true);
             }
@@ -106,7 +106,7 @@ public class PlayerScript : MonoBehaviour
                 }
 
 
-                if (Helping.GroundCheck(0, -0.8f) == true)
+                if (Helping.GroundCheck(0, 0) == true)
                 {
                     anim.SetBool("run", true);
                 }
