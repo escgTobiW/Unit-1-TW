@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
 
         
        
-        public bool canMove = true;
+    public bool canMove = true;
 
     public GameObject player;
 
@@ -146,8 +146,9 @@ public class PlayerScript : MonoBehaviour
         if (other.gameObject.CompareTag("enemy"))
         {
             anim.SetBool("dead", true);
-           // canMove = false;
+            canMove = false;
             spriteRenderer.sprite = spriteDown;
+            
         }
        
     }

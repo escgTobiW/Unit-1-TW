@@ -6,41 +6,61 @@ using UnityEngine.SceneManagement;
 public class DoorScript : MonoBehaviour
 {
     public GameObject player;
-    public GameObject[] door;
-    
-   Vector2 doorPos;
+    //public GameObject door;
 
-    bool open = false;
+    //Vector2 doorPos;
+    
+
+    bool openable = false;
+    bool toInside = false;
+    bool toOutside = false;
 
     void Start()
     {
-       
 
+     
     }
 
     void Update()
     {
 
-        // Create a temporary reference to the current scene.
+        
         Scene currentScene = SceneManager.GetActiveScene();
 
-        // Retrieve the name of this scene.
         string sceneName = currentScene.name;
 
-        door = GameObject.FindGameObjectsWithTag("Door");
-        doorPos = new Vector2(door.transform.position.x, door.transform.position.y);
+        //door = GameObject.Find("door");
+       // doorPos = new Vector2(door.transform.position.x, door.transform.position.y);
 
-        if (open == true)
+
+
+        if ((openable == true) && (Input.GetMouseButton(1) == true))
         {
             if (sceneName == "Outside")
             {
                 SceneManager.LoadScene("InsideHouse");
-                player.transform.position = doorPos;
+                /*door = GameObject.Find("door");
+                doorPos = new Vector2(door.transform.position.x, door.transform.position.y);
+                player.transform.position = doorPos;*/
+
+                toInside = true;
+               
+
             }
             else if (sceneName == "InsideHouse")
             {
                 SceneManager.LoadScene("Outside");
-                player.transform.position = doorPos;
+               // door = GameObject.Find("door");
+               // doorPos = new Vector2(door.transform.position.x, door.transform.position.y);
+               // player.transform.position = doorPos;
+                
+
+            }
+
+            if ((toInside == true) && (sceneName == "InsideHouse"))
+            {
+                player.transform.position = new Vector3(-18, -2, 0);
+                print("still here");
             }
            
             
@@ -52,11 +72,21 @@ public class DoorScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey("e") == true)
-            {
-                open = true;
-            }
+            
+            openable = true;
         }
+      
+
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+
+            openable = false;
+        }
+      
 
     }
 }
