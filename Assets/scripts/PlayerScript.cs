@@ -5,7 +5,7 @@ using Unity.Burst.CompilerServices;
 using UnityEditor;
 using UnityEditor.Tilemaps;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -145,10 +145,12 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemy"))
         {
-            anim.SetBool("dead", true);
+            //anim.SetBool("dead", true);
             canMove = false;
             spriteRenderer.sprite = spriteDown;
-            
+            SceneManager.LoadScene("Cutscene");
+          
+
         }
        
     }

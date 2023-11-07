@@ -188,7 +188,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Parallax graveyard_0: 8796557505840926166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -34,7 +34,7 @@ public class GhostPatrol : MonoBehaviour
         //anim.SetBool("walk", true);
         ghostPos = new Vector2(ghost.transform.position.x, ghost.transform.position.y);
 
-        if (ghostPos.y < 6)
+        if (ghostPos.y < 5)
         {
             flyUp = true;
             flyDown = false;

@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class StartScript : MonoBehaviour
 {
     
+
+
     public void StartGame()
     {
+        
         SceneManager.LoadScene("Outside");
+
     }
 
     public void QuitGame()
@@ -30,6 +34,6 @@ public class StartScript : MonoBehaviour
    
     void Update()
     {
-        
+
     }
 }

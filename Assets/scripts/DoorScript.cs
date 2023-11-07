@@ -12,8 +12,7 @@ public class DoorScript : MonoBehaviour
     
 
     bool openable = false;
-    bool toInside = false;
-    bool toOutside = false;
+ 
 
     void Start()
     {
@@ -43,7 +42,7 @@ public class DoorScript : MonoBehaviour
                 doorPos = new Vector2(door.transform.position.x, door.transform.position.y);
                 player.transform.position = doorPos;*/
 
-                toInside = true;
+          
                
 
             }
@@ -57,11 +56,7 @@ public class DoorScript : MonoBehaviour
 
             }
 
-            if ((toInside == true) && (sceneName == "InsideHouse"))
-            {
-                player.transform.position = new Vector3(-18, -2, 0);
-                print("still here");
-            }
+           
            
             
         }
