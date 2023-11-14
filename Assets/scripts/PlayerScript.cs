@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEditor;
-using UnityEditor.Tilemaps;
+//using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,12 +19,16 @@ public class PlayerScript : MonoBehaviour
     public float speed;
     public float jump;
 
+    bool dead = false;
+    float wait = 1;
+
+    /*
     public Sprite spriteDown;
     public Sprite spriteUp;
     public Sprite spriteLeft;
     public Sprite spriteRight;
+    */
 
-    
 
     private SpriteRenderer spriteRenderer;
 
@@ -69,12 +73,12 @@ public class PlayerScript : MonoBehaviour
             //---JUMP---         (was UP)
             if (Input.GetKeyDown("space") && (Helping.GroundCheck(0, 0)) == true)
             {
-                anim.SetBool("jump", true);
+                //anim.SetBool("jump", true);
                 rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
 
                 
             }
-
+            /*
             if (Helping.GroundCheck(0, 0) == false)
             {
                 anim.SetBool("jump", true);
@@ -83,10 +87,16 @@ public class PlayerScript : MonoBehaviour
             {
                 anim.SetBool("jump", false);
             }
-
-
+            */
+            
             if (Input.GetKey("a") || Input.GetKey("d") == true)
             {
+
+
+                if (Helping.GroundCheck(0, 0) == true)
+                {
+                    anim.SetBool("walk", true);
+                }
 
                 //---LEFT---
                 if (Input.GetKey("a") == true)
@@ -104,19 +114,15 @@ public class PlayerScript : MonoBehaviour
                     transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime), transform.position.y);
                     spriteRenderer.flipX = false;
                 }
+                
 
-
-                if (Helping.GroundCheck(0, 0) == true)
-                {
-                    anim.SetBool("run", true);
-                }
 
             }
          
             else
             {
 
-                anim.SetBool("run", false);
+                anim.SetBool("walk", false);
 
             }
 
@@ -132,11 +138,21 @@ public class PlayerScript : MonoBehaviour
             
 
         }
-
-
-
-
         //-----------------------
+
+        if (dead == true)
+        {
+            wait += Time.deltaTime;
+
+        }
+        
+
+        if (wait > 5)
+        {
+            SceneManager.LoadScene("Cutscene");
+        }
+
+
 
 
     }
@@ -145,10 +161,11 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("enemy"))
         {
-            //anim.SetBool("dead", true);
+            
             canMove = false;
-            spriteRenderer.sprite = spriteDown;
-            SceneManager.LoadScene("Cutscene");
+            anim.SetBool("dead", true);
+            //spriteRenderer.sprite = spriteDown;
+            dead = true;
           
 
         }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+//using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Helping : MonoBehaviour
 {
@@ -32,7 +32,7 @@ public class Helping : MonoBehaviour
 
         Color rayColour;
 
-        float distanceToCheck = 0.1f;
+        float distanceToCheck = 0.05f;
         bool isGrounded;
 
 
